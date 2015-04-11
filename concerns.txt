@@ -1,0 +1,11 @@
+We do only get the the questions for a group accessing the group and then using the join_info.questions field (containting a list of id-question-pairs).
+For events it's survey_questions (containting a list of id-question-pairs).
+
+We only get Answers to group-questions by requesting profiles.
+We only get Answers to event(-survey)-questions by requesting events.
+
+things like membership_dues contain already an unterscore without originally having been membership.dues
+
+you have to specify certain fields in the "fields" parameter of the GET request (e.g., "reachable" of members). Separate them with commas and don't use spaces (e.g., "gender,reachable,membership_count").
+
+Venues are retrievable by themself, but I think we might only need those specified in the event answer. The schema contains fields that are not given in the events answer but must be retrieved using the venues API (/2/venues/).
